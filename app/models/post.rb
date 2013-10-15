@@ -4,7 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   default_scope order('created_at DESC')
   before_save :set_defaults
-
+  
+mount_uploader :attachment, ImageUploader
   private
 
     def set_defaults

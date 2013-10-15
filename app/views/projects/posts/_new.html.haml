@@ -8,7 +8,7 @@
       .field
         = f.text_area :message, placeholder: "Type your message..."
       .field
-        = f.text_field :attachment, rows: 1, style: 'width: 90%;', placeholder: "Paste your attachment..."
+        = f.file_field :attachment, rows: 1, style: 'width: 90%;', placeholder: "Paste your attachment..."
 
         = f.hidden_field :project_id, value: @project.id
         = f.hidden_field :phase_id, value: params[:phase]
