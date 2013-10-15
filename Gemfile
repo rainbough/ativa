@@ -6,6 +6,7 @@ gem 'haml'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'rmagick'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -29,6 +30,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'carrierwave'
+
+gem 'figaro'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

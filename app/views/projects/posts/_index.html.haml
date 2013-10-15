@@ -12,3 +12,5 @@
       %small= post.updated_at.strftime("%m/%d/%y at %I:%M%P")
       = if post.attachment? then image_tag 'https://s3.amazonaws.com/mks_learn_app/paperclip.png', width: '12px' end
       %p= post.message.truncate(300)
+      = if post.attachment? then image_tag post.attachment_url(:thumb) end
+
