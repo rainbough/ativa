@@ -7,6 +7,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
+        Notifier.subscription_confirmation.deliver
         format.html { redirect_to project_path(@project.id), notice: 'You are now subscribed to this project.' }
       else
         format.html { redirect_to project_path(@project.id), alert: 'Your subscription could not be processed.' }

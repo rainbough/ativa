@@ -1,0 +1,11 @@
+Notifier#subscription_confirmation
+
+= @greeting  
+%p= "Hello #{@user.name},"
+%p= "You have been subscribed to the #{@project.name.capitalize} project at Ativa."
+%p For more information, click the link below:
+= link_to @project.name.capitalize, project_url(@project)
+%br
+%p Thank you,
+%p The Ativa team
+

@@ -166,6 +166,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri (~> 1.5.10)
   pry
   rails (= 4.0.0)
   rmagick
