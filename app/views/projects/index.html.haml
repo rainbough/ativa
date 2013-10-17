@@ -1,6 +1,20 @@
 %h1.text-center
   Active Projects
+= form_for(@project, remote: true) do |f|
+  - if @project.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
 
+  .field
+    = f.label :name
+    = f.text_field :name
+    = f.hidden_field :project_id, value: @project.id
+
+  .actions
+    = f.submit 'Save'
 .row
   .large-9.large-centered.columns
     %table
@@ -21,6 +35,5 @@
             %td= project.updated_at.strftime("%m/%d/%y at %I:%M%P")
             %td= link_to 'Edit', edit_project_path(project.id)
             %td= link_to 'Destroy', project_path(project.id), method: :delete, data: { confirm: 'Are you sure?' }
-%h3 New project
-= render 'form'
+
 
