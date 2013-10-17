@@ -1,6 +1,5 @@
 %h1.text-center
   Active Projects
-  %small= link_to 'New Project', new_project_path
 
 .row
   .large-9.large-centered.columns
@@ -22,3 +21,6 @@
             %td= project.updated_at.strftime("%m/%d/%y at %I:%M%P")
             %td= link_to 'Edit', edit_project_path(project.id)
             %td= link_to 'Destroy', project_path(project.id), method: :delete, data: { confirm: 'Are you sure?' }
+%h3 New project
+= render 'form'
+
